@@ -1,5 +1,6 @@
 import React, {Component} from "react";
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
+import ContactForm from './ContactForm/ContactForm';
 class App extends Component {
 state = {
   contacts: [
@@ -14,9 +15,8 @@ state = {
   render() {
     return (
       <>
-         <div></div>
-      </>
-   
+      <ContactForm/>
+   </>
     );
   }
 }

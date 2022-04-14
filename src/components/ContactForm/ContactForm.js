@@ -18,6 +18,15 @@ class ContactForm extends Component {
    }
    handleSubmit = (e) => {
       e.preventDefault();
+      const { name, number } = this.state;
+      this.props.onSubmit(name, number);
+      this.reset();
+   }
+   reset =()=> {
+      this.setState({
+         name: '',
+         number: '',
+      });
    }
    render() {
       const { name, number } = this.state;
@@ -39,7 +48,8 @@ class ContactForm extends Component {
             <label className={s.label}>
                Number
             </label>
-                           <input
+            <input
+               className={s.input}
                type="tel"
                name="number"
                pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
