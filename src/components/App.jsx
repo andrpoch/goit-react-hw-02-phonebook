@@ -1,7 +1,9 @@
 import React, {Component} from "react";
-// import { nanoid } from 'nanoid';
+import { nanoid } from 'nanoid';
 import ContactForm from './ContactForm/ContactForm';
+import ContactList from "./ContactList/ContactList";
 class App extends Component {
+
 state = {
   contacts: [
     {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
@@ -11,11 +13,30 @@ state = {
   ],
   filter: '',
 }
-
+  addContact = (name, number) => {
+    const { contacts } = this.state;
+    const newContact = {
+      id: nanoid(),
+      name,
+      number,
+    }
+    if (contacts.find((contact) => contact.name === newContact.name)) {
+      alert(`${newContact.name} is already in contact.`);
+      return;
+    }
+    this.setState(({ contacts }) => ({
+      contacts: [newContact, ...contacts]
+    }));
+  };
   render() {
     return (
       <>
-      <ContactForm/>
+        <h1>Phonebook</h1>
+
+        <ContactForm onSubmit={this.addContact} />
+        <h2>Contacts</h2>
+
+        <ContactList />
    </>
     );
   }
