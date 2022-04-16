@@ -1,0 +1,14 @@
+.wrapper{
+   display: flex;
+   justify-content: center;
+}
+.list{
+   width: 500px;
+   height: auto;
+   border: 2px solid lightblue;
+   border-radius: 10px;
+   list-style: none;
+   /* display: flex;
+   align-items: center;
+   flex-direction: column; */
+}

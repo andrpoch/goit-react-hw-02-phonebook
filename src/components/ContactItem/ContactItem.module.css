@@ -1,0 +1,30 @@
+ .item{
+  padding: 10px;;
+  display: flex;
+  justify-content: space-between;
+  align-items: centerl;
+ }
+  .item:first-child{
+padding-top: 20px;
+ }
+   .item:last-child{
+padding-bottom: 20px;
+ }
+ .text{
+  color: rgb(85, 190, 226);
+  font-weight: 700;
+  font-size: 18px;
+}
+.button {
+  width: 150px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  background-color: lightblue;
+    color: rgb(33, 91, 110);
+}
+.button:hover,
+.button:focus {
+  background-color: rgb(85, 190, 226);
+  color: white;
+}
